@@ -1,6 +1,5 @@
 FROM openjdk:11
 VOLUME /tmp
 EXPOSE 8080
-ARG JAR_FILE=target/demo-0.0.1-SNAPSHOT.jar
-ADD ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ADD target/target/demo-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT exec java -jar app.jar
